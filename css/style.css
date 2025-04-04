@@ -96,3 +96,28 @@ body {
     color: #fff;
   }
 
+/* leaderboard styling */
+#leaderboard-list{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 200px;
+    width: 100%;
+    text-align: left;
+}
+
+#leaderboard-list li{
+    padding: 0.5rem;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+    color: #333;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+#leaderboard-list li:hover{
+    background-color: #e0e0e0;
+}
