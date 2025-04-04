@@ -25,5 +25,5 @@ submitNameBtn.addEventListener("click", () => {
   localStorage.setItem("currentPlayer", playerName);
 
   // move to the quiz page
-  window.location.href = "quiz.html";
+  window.location.href = "pages/quiz.html";
 });
