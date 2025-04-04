@@ -4,14 +4,24 @@
 // and we are using the localStorage API to retrieve the leaderboard data from local storage
 document.addEventListener("DOMContentLoaded", () => {
   const leaderboardList = document.getElementById("leaderboard-list");
-  const scores = JSON.parse(localStorage.getItem("leaderboard")) || [];
+  const leaderboard = JSON.parse(localStorage.getItem("leaderboard")) || [];
 
-  if (scores.length === 0) {
+  if (leaderboard.length === 0) {
     leaderboardList.innerHTML = "<li>No scores yet!</li>";
   } else {
-    const sortedScores = scores.sort((a, b) => b.score - a.score);
-    leaderboardList.innerHTML = sortedScores
-      .map((score) => `<li>${score.name} - ${score.score}</li>`)
+    // Sort leaderboard in descending order by score
+    const sortedLeaderboard = leaderboard.sort((a, b) => b.score - a.score);
+
+    // Generate HTML for leaderboard
+    leaderboardList.innerHTML = sortedLeaderboard
+      .map((player, index) => {
+        return `
+          <li class="leaderboard-entry" >
+            <span class="player-name">${player.name}</span>
+            <span class="player-score">${player.score}</span>
+          </li>
+        `;
+      })
       .join("");
   }
 });
