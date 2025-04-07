@@ -66,7 +66,7 @@ nextBtn.addEventListener("click", () => {
     leaderboard.push({ name: playerName, score });
     localStorage.setItem("leaderboard", JSON.stringify(leaderboard));
 
-    window.location.href = "/result.html";
+    window.location.href = "result.html";
   }
 });
 
